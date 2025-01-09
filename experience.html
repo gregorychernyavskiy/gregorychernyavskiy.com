@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Gregory Chernyavskiy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        .experience-entry {
+            background-color: #2C2C2C;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-entry:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .experience-entry h3 {
+            font-size: 24px;
+            color: #F08080;
+        }
+
+        .experience-entry p {
+            font-size: 18px;
+            color: #E0E0E0;
+            line-height: 1.6;
+        }
+
+        .experience-entry strong {
+            color: #F08080;
+        }
+
+        .experience-entry::before {
+            content: "";
+            display: block;
+            height: 5px;
+            width: 50px;
+            background-color: #F08080;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="experience" class="section">
+        <h2 data-aos="fade-up">Work Experience</h2>
+
+        <div class="experience-entry" data-aos="fade-up" data-aos-delay="400">
+            <h3>Undergraduate AI/ML Research Assistant, SwAPP Lab</h3>
+            <p><strong>Aug 2024 – Current</strong></p>
+            <p>At the Software Analytics and Pervasive Parallelism Lab (SwAPP), I led the development of interactive tools to analyze and interpret 
+                code-trained language models, leveraging hierarchical clustering and concept annotation for enhanced model transparency. 
+                I designed data pipelines using SciPy for statistical analysis and clustering, improving performance and interpretability. 
+                Additionally, I conducted prompt engineering and error analysis to refine model outputs, reducing bias and enhancing precision, clarity, and consistency.
+            </p>
+        </div>
+        
+        <div class="experience-entry" data-aos="fade-up">
+            <h3>Research Intern at The DePaul DICE Lab</h3>
+            <p><strong>May 2024 – Aug 2024</strong></p>
+            <p>During my internship at the DePaul DICE Lab, I enhanced container efficiency by designing a Docker interface integrated with 
+                Content-Defined Merkle Trees (CDMT) to optimize data versioning and reduce redundancy. I utilized SciUnits to track dependencies and 
+                improve performance, increasing efficiency by 30% and cutting storage costs by 20%. I also automated container workflows with Python scripts, 
+                which reduced setup time by 50% and minimized user errors by 40%.
+            </p>
+        </div>
+        
+
+        <h2 data-aos="fade-up">Projects</h2>
+        <div class="carousel">
+            <div class="project" data-aos="fade-up" data-aos-delay="400">
+                <img src="images/cylife.jpg" alt="CyLife">
+                <h3>CyLife</h3>
+                <p>
+                    Led backend development for CyLife, a full-stack app built with Spring Boot and MySQL, managing four relational tables and using Maven (pom.xml)
+                     for dependency management. I developed real-time chat and notification systems with two WebSocket channels and collaborated with 
+                     a frontend developer to deploy the Android client via Android Studio, enhancing engagement for Iowa State students.
+                </p>
+                <a href="https://github.com/gregorychernyavskiy/CyLife" target="_blank" class="btn">View Project</a>
+                <div class="skills">
+                    <div class="skill">
+                        <p>Spring Boot</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>MySQL</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="project" data-aos="fade-up">
+                <img src="images/cherzycoinbot.jpg" alt="CherzyCoinBot">
+                <h3>CherzyCoinBot</h3>
+                <p>Built Cherzy Coin Bot using Python and integrated Telegram’s API to provide users with real-time cryptocurrency price updates. 
+                    I deployed the bot on AWS EC2 with secure SSH connections via PuTTY, reducing downtime by 45% and maintaining 99.8% uptime, 
+                    ensuring reliable remote management and fast market data delivery.</p>
+                <a href="https://github.com/gregorychernyavskiy/CherzyCoinBot" target="_blank" class="btn">View Project</a>
+                <div class="skills">
+                    <div class="skill">
+                        <p>Python</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>API Integration</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/amr.jpg" alt="Archived Message Reconstruction">
+                <h3>Archived Message Reconstruction (AMR)</h3>
+                <p>Improved message decoding accuracy and reliability to 98.7% and boosted processing speed by 30% using recursive algorithms 
+                    for efficient tree construction. Through rigorous testing and validation protocols, I enhanced the system's performance and robustness, 
+                    ensuring reliable decoding across diverse scenarios.</p>
+                <a href="https://github.com/gregorychernyavskiy/Archived-Message-Reconstruction-AMR-" target="_blank" class="btn">View Project</a>
+                <div class="skills">
+                    <div class="skill">
+                        <p>Java</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Algorithm Design</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="leadership" class="section">
+            <h2 data-aos="fade-up">Leadership</h2>
+            <div class="experience-entry" data-aos="fade-up" data-aos-delay="400">
+                <h3>Computer Science & Software Engineering Club (CSE) - Project Lead </h3>
+                <p><strong>01/2024 – Current</strong></p>
+                <p>As Project Lead of the CSE Club, I led diverse coding projects by fostering collaboration, guiding members through complex problem-solving, 
+                    and organizing technical workshops to improve coding practices, teamwork, and expertise in emerging technologies.</p>
+            </div>
+            <div class="experience-entry" data-aos="fade-up">
+                <h3>PrISUm Solar Car - Optimization Lead</h3>
+                <p><strong>Aug 2022 - Sep 2023</strong></p>
+                <p> Led the optimization efforts for the PrISUm Solar Car, enhancing vehicle performance by 35% through the development of an onboard diagnostic 
+                    system for real-time data collection and analysis. This system improved the accuracy of performance monitoring and system optimization, 
+                    ensuring smooth project execution.</p>
+            </div>
+        <h2 data-aos="fade-up">Skills</h2>
+        <div class="skills-section">
+            <div class="skill-item" data-aos="fade-up">
+                <p>Java</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                <p>Python</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                <p>C</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                <p>C++</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+                <p>JavaScript</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="500">
+                <p>MySQL</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="600">
+                <p>TypeScript</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 95%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="700">
+                <p>Git</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="800">
+                <p>Docker</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="900">
+                <p>Spring Boot</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="1000">
+                <p>AWS</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="1100">
+                <p>HTML/CSS</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>        
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gregory Chernyavskiy. All rights reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 100
+                },
+                size: {
+                    value: 3
+                },
+                move: {
+                    speed: 1
+                },
+                line_linked: {
+                    enable: true
+                }
+            }
+        });
+
+        // Initialize AOS (Animate On Scroll)
+        AOS.init();
+    </script>
+</body>
+</html>

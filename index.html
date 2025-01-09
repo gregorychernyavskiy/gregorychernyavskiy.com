@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gregory Chernyavskiy Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        .intro-entry {
+            background-color: #2C2C2C;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .intro-entry:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .intro-entry h2 {
+            font-size: 24px;
+            color: #F08080;
+        }
+
+        .intro-entry p {
+            font-size: 18px;
+            color: #E0E0E0;
+            line-height: 1.6;
+        }
+
+        .intro-entry strong {
+            color: #F08080;
+        }
+
+        .intro-entry::before {
+            content: "";
+            display: block;
+            height: 5px;
+            width: 50px;
+            background-color: #F08080;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="section parallax">
+        <div class="intro intro-entry" data-aos="fade-up">
+            <h2 class="name pop-up">Hi, I'm Gregory Chernyavskiy</h2>
+            <p class="description pop-up">
+                A third-year Computer Science & Applied AI student at Iowa State University with a passion for full-stack development, cloud computing, and deep learning. My past experience includes optimizing DevOps processes during a research internship at DePaul DICE Lab and building scalable systems with a focus on automation. Notable projects include CyLife, a full-stack app with real-time chat and notification features, a real-time cryptocurrency bot, and a solar car diagnostics system. I am currently focused on enhancing code interpretability at the SwAPP Lab.</p>
+            </p>
+            <img src="images/Greg.jpg" alt="Gregory Chernyavskiy" class="profile-picture">
+            <div class="buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="resume.pdf" class="btn" download="Gregory_Chernyavskiy_Resume.pdf">Download CV</a>
+            </div>            
+            <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://www.linkedin.com/in/gregory-chernyavskiy/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/gregorychernyavskiy" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>        
+    </section>
+    <footer>
+        <p>&copy; 2024 Gregory Chernyavskiy. All rights reserved.</p>
+    </footer>
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 100
+                },
+                size: {
+                    value: 3
+                },
+                move: {
+                    speed: 1
+                },
+                line_linked: {
+                    enable: true
+                }
+            }
+        });
+
+        // Initialize Typewriter effect
+        var app = document.getElementById('typewriter');
+        var typewriter = new Typewriter(app, {
+            loop: true
+        });
+
+        typewriter.typeString('Gregory Chernyavskiy')
+            .pauseFor(2500)
+            .deleteAll()
+            .typeString('a Tech Enthusiast')
+            .pauseFor(2500)
+            .start();
+
+        // Initialize AOS (Animate On Scroll)
+        AOS.init();
+    </script>
+</body>
+</html>
