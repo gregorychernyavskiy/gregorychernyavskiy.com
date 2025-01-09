@@ -1,7 +1,3 @@
-Here's a README file for your portfolio project:
-
----
-
 # Gregory Chernyavskiy - Portfolio Website
 
 This repository contains the source code and assets for my personal portfolio website, designed to showcase my skills, projects, and work experience. The site includes a modern, user-friendly interface with parallax effects, smooth scrolling, and interactive features.
