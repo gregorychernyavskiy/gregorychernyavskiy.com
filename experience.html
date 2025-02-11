@@ -44,6 +44,24 @@
             background-color: #F08080;
             margin-bottom: 15px;
         }
+
+        .project .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F08080;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .project .btn:hover {
+            background-color: #E06C6C;
+        }
+
     </style>
 </head>
 <body>
@@ -63,58 +81,113 @@
 
         <div class="experience-entry" data-aos="fade-up" data-aos-delay="400">
             <h3>Undergraduate AI/ML Research Assistant, SwAPP Lab</h3>
-            <p><strong>Aug 2024 – Current</strong></p>
-            <p>At the Software Analytics and Pervasive Parallelism Lab (SwAPP), I led the development of interactive tools to analyze and interpret 
-                code-trained language models, leveraging hierarchical clustering and concept annotation for enhanced model transparency. 
-                I designed data pipelines using SciPy for statistical analysis and clustering, improving performance and interpretability. 
-                Additionally, I conducted prompt engineering and error analysis to refine model outputs, reducing bias and enhancing precision, clarity, and consistency.
+            <p><strong>Aug 2024 – Jan 2025</strong></p>
+            <p>
+                As an undergraduate AI/ML researcher at the Software Analytics and Pervasive Parallelism Lab (SwAPP), I developed custom tools leveraging the Tree-sitter parsing library, NumPy, and APIs in Python to automate dataset labeling, improving model analysis and interpretability. I also designed and optimized a data processing pipeline using NumPy and SciPy to efficiently preprocess and transform large datasets, enhancing both performance and model accuracy. Additionally, I conducted prompt engineering and error analysis while utilizing Git for version control, refining model outputs to minimize bias and improve clarity, precision, and consistency.
             </p>
         </div>
         
         <div class="experience-entry" data-aos="fade-up">
             <h3>Research Intern at The DePaul DICE Lab</h3>
             <p><strong>May 2024 – Aug 2024</strong></p>
-            <p>During my internship at the DePaul DICE Lab, I enhanced container efficiency by designing a Docker interface integrated with 
-                Content-Defined Merkle Trees (CDMT) to optimize data versioning and reduce redundancy. I utilized SciUnits to track dependencies and 
-                improve performance, increasing efficiency by 30% and cutting storage costs by 20%. I also automated container workflows with Python scripts, 
-                which reduced setup time by 50% and minimized user errors by 40%.
+            <p>
+                I designed and deployed a Docker container interface on an Ubuntu VM, integrating Content-Defined Merkle Trees (CDMT) to minimize redundancy and enhance operational efficiency. My work involved cleansing and transforming container workflow logs using Python, NumPy, and APIs to ensure accurate tracking and provide more reliable inputs for analysis. I also optimized Docker performance and data storage by leveraging SciUnits and CDMT, improving efficiency while reducing storage costs. Additionally, I automated container workflows with Python scripts, streamlining deployment, resource management, and error logging on GitHub, which improved setup time and reduced user-related errors.
             </p>
         </div>
-        
 
         <h2 data-aos="fade-up">Projects</h2>
         <div class="carousel">
             <div class="project" data-aos="fade-up" data-aos-delay="400">
+                <img src="images/convertfile.jpg" alt="convertfile.me">
+                <h3>convertfile.me</h3>
+                <p>
+                    I developed convertfile.me, a web-based file conversion tool with a frontend built using JavaScript, HTML, and CSS for seamless file uploads and management. On the backend, I utilized Node.js and Express to handle file processing, integrating Multer for multi-file uploads and temporary storage, Sharp for image format conversion, and PDF-Lib for merging and manipulating PDFs. To enhance user experience, I implemented a drag-and-drop interface with real-time file selection tracking, ensuring a smooth and intuitive workflow for users.
+                <a href="https://github.com/gregorychernyavskiy/convertfile.me" target="_blank" class="btn">View Project</a>
+                <div class="skills">
+                    <div class="skill">
+                        <p>JavaScript</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Node.js</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Express</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>HTML/CSS</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="project" data-aos="fade-up">
                 <img src="images/cylife.jpg" alt="CyLife">
                 <h3>CyLife</h3>
                 <p>
-                    Led backend development for CyLife, a full-stack app built with Spring Boot and MySQL, managing four relational tables and using Maven (pom.xml)
-                     for dependency management. I developed real-time chat and notification systems with two WebSocket channels and collaborated with 
-                     a frontend developer to deploy the Android client via Android Studio, enhancing engagement for Iowa State students.
-                </p>
+                    I led the backend development for a full-stack application, leveraging Spring Boot, Java, and MySQL to efficiently manage relational database operations. I worked closely with a small team to integrate real-time chat and notification features using WebSocket channels, ensuring seamless communication between users. Additionally, I set up and configured Maven for dependency management, improving the development workflow and coordination between the backend and frontend teams. Throughout the project, I focused on optimizing performance, maintaining clean architecture, and ensuring smooth collaboration with other developers.
                 <a href="https://github.com/gregorychernyavskiy/CyLife" target="_blank" class="btn">View Project</a>
                 <div class="skills">
                     <div class="skill">
-                        <p>Spring Boot</p>
+                        <p>Java</p>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 90%;"></div>
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>JavaScript</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
                         </div>
                     </div>
                     <div class="skill">
                         <p>MySQL</p>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 85%;"></div>
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Spring Boot</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Android Studio</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>WebSockets</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Maven</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 100%;"></div>
                         </div>
                     </div>
                 </div>
             </div>            
             <div class="project" data-aos="fade-up">
-                <img src="images/cherzycoinbot.jpg" alt="CherzyCoinBot">
-                <h3>CherzyCoinBot</h3>
-                <p>Built Cherzy Coin Bot using Python and integrated Telegram’s API to provide users with real-time cryptocurrency price updates. 
-                    I deployed the bot on AWS EC2 with secure SSH connections via PuTTY, reducing downtime by 45% and maintaining 99.8% uptime, 
-                    ensuring reliable remote management and fast market data delivery.</p>
-                <a href="https://github.com/gregorychernyavskiy/CherzyCoinBot" target="_blank" class="btn">View Project</a>
+                <img src="images/cherzycryptobot.jpg" alt="Cherzy Crypto Bot">
+                <h3>Cherzy Crypto Bot</h3>
+                <p>
+                    I developed a Python-based Telegram bot that utilizes the CoinGecko API to provide real-time cryptocurrency data, price tracking, and trading insights to users. The bot was designed to analyze market trends across multiple time intervals, delivering key metrics such as market capitalization, 24-hour trading volume, and circulating supply. By implementing efficient data retrieval and processing techniques, I ensured reliable performance and minimized downtime, allowing users to make informed trading decisions based on up-to-date market conditions.
+                </p>
+                <a href="https://github.com/gregorychernyavskiy/Cherzy-Crypto-Bot" target="_blank" class="btn">View Project</a>
                 <div class="skills">
                     <div class="skill">
                         <p>Python</p>
@@ -123,9 +196,9 @@
                         </div>
                     </div>
                     <div class="skill">
-                        <p>API Integration</p>
+                        <p>Telegram & Cryptocurrency APIs</p>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 80%;"></div>
+                            <div class="progress-bar" style="width: 100%;"></div>
                         </div>
                     </div>
                 </div>
@@ -133,9 +206,9 @@
             <div class="project" data-aos="fade-up" data-aos-delay="200">
                 <img src="images/amr.jpg" alt="Archived Message Reconstruction">
                 <h3>Archived Message Reconstruction (AMR)</h3>
-                <p>Improved message decoding accuracy and reliability to 98.7% and boosted processing speed by 30% using recursive algorithms 
-                    for efficient tree construction. Through rigorous testing and validation protocols, I enhanced the system's performance and robustness, 
-                    ensuring reliable decoding across diverse scenarios.</p>
+                <p>
+                    I optimized message decoding by implementing recursive algorithms for efficient tree construction, significantly improving accuracy and processing speed. Through rigorous testing and validation, I enhanced system reliability and robustness, ensuring consistent and precise decoding across various scenarios. My approach focused on optimizing algorithmic efficiency while maintaining adaptability to different input conditions.
+                </p>
                 <a href="https://github.com/gregorychernyavskiy/Archived-Message-Reconstruction-AMR-" target="_blank" class="btn">View Project</a>
                 <div class="skills">
                     <div class="skill">
@@ -147,7 +220,7 @@
                     <div class="skill">
                         <p>Algorithm Design</p>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 80%;"></div>
+                            <div class="progress-bar" style="width: 100%;"></div>
                         </div>
                     </div>
                 </div>
@@ -156,93 +229,20 @@
         <section id="leadership" class="section">
             <h2 data-aos="fade-up">Leadership</h2>
             <div class="experience-entry" data-aos="fade-up" data-aos-delay="400">
-                <h3>Computer Science & Software Engineering Club (CSE) - Project Lead </h3>
-                <p><strong>01/2024 – Current</strong></p>
-                <p>As Project Lead of the CSE Club, I led diverse coding projects by fostering collaboration, guiding members through complex problem-solving, 
+                <h3>Computer Science & Software Engineering Club (CSE) – Project Lead </h3>
+                <p><strong>Jan 2024 – Dec 2024</strong></p>
+                <p>
+                    As Project Lead of the CSE Club, I led diverse coding projects by fostering collaboration, guiding members through complex problem-solving, 
                     and organizing technical workshops to improve coding practices, teamwork, and expertise in emerging technologies.</p>
             </div>
             <div class="experience-entry" data-aos="fade-up">
-                <h3>PrISUm Solar Car - Optimization Lead</h3>
-                <p><strong>Aug 2022 - Sep 2023</strong></p>
-                <p> Led the optimization efforts for the PrISUm Solar Car, enhancing vehicle performance by 35% through the development of an onboard diagnostic 
+                <h3>PrISUm Solar Car – Optimization Lead</h3>
+                <p><strong>Aug 2022 – Sep 2023</strong></p>
+                <p> 
+                    Led the optimization efforts for the PrISUm Solar Car, enhancing vehicle performance by 35% through the development of an onboard diagnostic 
                     system for real-time data collection and analysis. This system improved the accuracy of performance monitoring and system optimization, 
                     ensuring smooth project execution.</p>
-            </div>
-        <h2 data-aos="fade-up">Skills</h2>
-        <div class="skills-section">
-            <div class="skill-item" data-aos="fade-up">
-                <p>Java</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 100%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-                <p>Python</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 100%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-                <p>C</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 80%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
-                <p>C++</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 80%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
-                <p>JavaScript</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 90%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="500">
-                <p>MySQL</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 85%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="600">
-                <p>TypeScript</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 95%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="700">
-                <p>Git</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 85%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="800">
-                <p>Docker</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 90%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="900">
-                <p>Spring Boot</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 90%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="1000">
-                <p>AWS</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 80%;"></div>
-                </div>
-            </div>
-            <div class="skill-item" data-aos="fade-up" data-aos-delay="1100">
-                <p>HTML/CSS</p>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 100%;"></div>
-                </div>
-            </div>
-        </div>        
+            </div>        
     </section>
 
     <footer>
