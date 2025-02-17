@@ -503,14 +503,19 @@ form button:hover {
     gap: 10px;
 }
 .project-images img {
-    width: 600px;
-    height: auto;
+    width: 600px; /* Adjust this if needed */
+    height: auto; /* Set a fixed height */
+    object-fit: cover; /* Ensures images maintain aspect ratio and fill the box */
     border-radius: 10px;
 }
+
 .project-content h3 {
-    color: #F08080;
-    font-size: 24px;
-    margin-bottom: 10px;
+    text-align: center; /* Keeps the title centered */
+}
+
+.project-content ul {
+    text-align: left; /* Aligns bullet points to the left */
+    padding-left: 20px; /* Ensures proper indentation */
 }
 
 .project-content {
