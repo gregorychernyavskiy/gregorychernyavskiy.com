@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
         .experience-entry {
-            background-color: #2C2C2C;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333333;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            width: 80%;
+            margin: 20px auto;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -21,49 +25,114 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .experience-entry h3 {
-            font-size: 24px;
-            color: #F08080;
+        .experience-details {
+            flex: 1;
+            text-align: left;
+            padding-right: 20px;
         }
 
-        .experience-entry p {
-            font-size: 18px;
-            color: #E0E0E0;
-            line-height: 1.6;
+        .experience-map {
+            width: 300px;
+            height: 200px;
         }
 
-        .experience-entry strong {
-            color: #F08080;
+        .experience-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px;
         }
 
-        .experience-entry::before {
-            content: "";
-            display: block;
-            height: 5px;
-            width: 50px;
-            background-color: #F08080;
-            margin-bottom: 15px;
-        }
 
-        .project .btn {
+        .project-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            gap: 40px;
             align-items: center;
-            background-color: #F08080;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
+            justify-content: center;
+        }
+        .project {
+            display: flex;
+            flex-direction: row;
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            align-items: center;
+        }
+        .project-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .project-images img {
+            width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .project-content h3 {
+            color: #F08080;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project-content {
+            flex-grow: 1;
+            padding-left: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .skills-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: auto; 
+        }
+        .skills-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-top: 10px;
         }
+        .skills-buttons button {
+            background-color: #F08080;
+            color: #1A1A1A;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
 
-        .project .btn:hover {
-            background-color: #E06C6C;
+
+        .github-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+        }
+        .github-icon img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .github-icon img:hover {
+            transform: scale(1.2);
         }
 
     </style>
 </head>
+
 <body>
     <div id="particles-js"></div>
     <header>
@@ -76,200 +145,195 @@
         </nav>
     </header>
     
+
     <section id="experience" class="section">
         <h2 data-aos="fade-up">Work Experience</h2>
-
-        <div class="experience-entry" data-aos="fade-up" data-aos-delay="400">
-            <h3>Undergraduate AI/ML Research Assistant, SwAPP Lab</h3>
-            <p><strong>Aug 2024 – Jan 2025</strong></p>
-            <p>
-                As an undergraduate AI/ML researcher at the Software Analytics and Pervasive Parallelism Lab (SwAPP), I developed custom tools leveraging the Tree-sitter parsing library, NumPy, and APIs in Python to automate dataset labeling, improving model analysis and interpretability. I also designed and optimized a data processing pipeline using NumPy and SciPy to efficiently preprocess and transform large datasets, enhancing both performance and model accuracy. Additionally, I conducted prompt engineering and error analysis while utilizing Git for version control, refining model outputs to minimize bias and improve clarity, precision, and consistency.
-            </p>
-        </div>
-        
+        <hr style="border: 1px solid #F08080; width: 80%; margin: 10px auto;">
         <div class="experience-entry" data-aos="fade-up">
-            <h3>Research Intern at The DePaul DICE Lab</h3>
-            <p><strong>May 2024 – Aug 2024</strong></p>
-            <p>
-                I designed and deployed a Docker container interface on an Ubuntu VM, integrating Content-Defined Merkle Trees (CDMT) to minimize redundancy and enhance operational efficiency. My work involved cleansing and transforming container workflow logs using Python, NumPy, and APIs to ensure accurate tracking and provide more reliable inputs for analysis. I also optimized Docker performance and data storage by leveraging SciUnits and CDMT, improving efficiency while reducing storage costs. Additionally, I automated container workflows with Python scripts, streamlining deployment, resource management, and error logging on GitHub, which improved setup time and reduced user-related errors.
-            </p>
+            <div class="experience-details">
+                <h3 style="color: #F08080; font-size: 28px;">Undergraduate AI/ML Research Assistant</h3>
+                <p><strong style="color: #F08080;">SwAPP Lab | Aug 2024 – Jan 2025</strong></p>
+                <ul>
+                    <li>Developed auto-labeled datasets using Tree-sitter, NumPy, and Python APIs to improve model interpretability and streamline the dataset labeling process.</li>
+                    <p></p>
+                    <li>Optimized data processing pipelines with NumPy and SciPy, reducing processing time and enhancing clustering model accuracy for datasets of 100,000+ data points.</li>
+                    <p></p>
+                    <li>Refined AI model outputs through prompt engineering and error analysis, improving clarity, precision, and consistency while leveraging Git for version control.</li>
+                    <p></p>
+                    <li>Conducted in-depth model behavior analysis to detect bias and inconsistencies, applying statistical methods to enhance interpretability and reliability.</li>
+                </ul>
+            </div>
+            <div class="experience-map">
+                <a href="https://swapp.cs.iastate.edu/" target="_blank">
+                    <img src="images/SWAPP MAp.jpg" alt="DePaul DICE Lab Location" class="experience-image" style="object-fit: cover; width: 100%; height: 100%; border-radius: 10px;">
+                </a>
+            </div>
         </div>
+    
+        <div class="experience-entry" data-aos="fade-up">
+            <div class="experience-details">
+                <h3 style="color: #F08080; font-size: 28px;">Research Intern</h3>
+                <p><strong style="color: #F08080;">DePaul DICE Lab | May 2024 – Aug 2024</strong></p>
+                <ul>
+                    <li>Developed and deployed a Docker-based containerization system on an Ubuntu VM, integrating Content-Defined Merkle Trees (CDMT) with Python to enhance data deduplication and streamline storage management.</li>
+                    <p></p>
+                    <li>Engineered a Python-driven data processing pipeline using NumPy to clean and transform container workflow logs, improving log analytics and anomaly detection.</li>
+                    <p></p>
+                    <li>Automated container workflow management with Python scripts, optimizing deployment, resource allocation, and GitHub error logging to simplify operations and reduce manual intervention.</li>
+                    <p></p>
+                    <li>Designed an efficient logging and monitoring framework for containerized environments, improving visibility into system performance and enhancing resource optimization in distributed computing systems.</li>
+                </ul>
+            </div>
+            <div class="experience-map">
+                <a href="https://dice.cs.depaul.edu/" target="_blank">
+                    <img src="images/DePaul MAp.jpg" alt="DePaul DICE Lab Location" class="experience-image" style="object-fit: cover; width: 100%; height: 100%; border-radius: 10px;">
+                </a>
+            </div>
+        </div>
+    </section>
+    
 
+    
+    <section id="project" class="section">
         <h2 data-aos="fade-up">Projects</h2>
-        <div class="carousel">
-            <div class="project" data-aos="fade-up" data-aos-delay="400">
-                <img src="images/convertfile.jpg" alt="convertfile.me">
-                <h3>convertfile.me</h3>
-                <p>
-                    I developed convertfile.me, a web-based file conversion tool with a frontend built using JavaScript, HTML, and CSS for seamless file uploads and management. On the backend, I utilized Node.js and Express to handle file processing, integrating Multer for multi-file uploads and temporary storage, Sharp for image format conversion, and PDF-Lib for merging and manipulating PDFs. To enhance user experience, I implemented a drag-and-drop interface with real-time file selection tracking, ensuring a smooth and intuitive workflow for users.
-                <a href="https://github.com/gregorychernyavskiy/convertfile.me" target="_blank" class="btn">View Project</a>
-                <div class="skills">
-                    <div class="skill">
-                        <p>JavaScript</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Node.js</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Express</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>HTML/CSS</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
+        <hr style="border: 1px solid #F08080; width: 80%; margin: 10px auto;">
+        <div class="project-container">
+            <div class="project" data-aos="fade-up">
+                <div class="project-images">
+                    <img src="images/convertfile/convertfile.jpg" alt="convertfile">
+                    <img src="images/convertfile/code.jpg" alt="code">
+                </div>
+                <div class="project-content">
+                    <h3>convertfile.me</h3>
+                    <ul>
+                        <li>The platform supports multi-format image conversion, allowing seamless transitions between PNG, JPG, and other formats using Sharp, ensuring high-quality output with optimized file sizes.</li>
+                        <p></p>
+                        <li>PDF merging and manipulation are powered by PDF-Lib, enabling users to efficiently combine multiple PDFs while maintaining document quality and integrity.</li>
+                        <p></p>
+                        <li>A user-friendly drag-and-drop interface enhances accessibility by providing a real-time file selection and upload experience, making file management intuitive and efficient.</li>
+                        <p></p>
+                        <li>The backend is built with Node.js and Express, leveraging Multer for efficient multi-file uploads and temporary storage, ensuring fast, reliable, and scalable file processing.</li>
+                    </ul>
+                    <div class="skills-buttons">
+                        <button>JavaScript</button>
+                        <button>Node.js</button>
+                        <button>Express.js</button>
+                        <button>HTML</button>
+                        <button>CSS</button>
+                        <a href="https://github.com/gregorychernyavskiy/convertfile.me" target="_blank" class="github-icon">
+                            <img src="images/git.jpg" alt="GitHub">
+                        </a>                        
                     </div>
                 </div>
-            </div>    
+            </div>
             <div class="project" data-aos="fade-up">
-                <img src="images/cylife.jpg" alt="CyLife">
-                <h3>CyLife</h3>
-                <p>
-                    I led the backend development for a full-stack application, leveraging Spring Boot, Java, and MySQL to efficiently manage relational database operations. I worked closely with a small team to integrate real-time chat and notification features using WebSocket channels, ensuring seamless communication between users. Additionally, I set up and configured Maven for dependency management, improving the development workflow and coordination between the backend and frontend teams. Throughout the project, I focused on optimizing performance, maintaining clean architecture, and ensuring smooth collaboration with other developers.
-                <a href="https://github.com/gregorychernyavskiy/CyLife" target="_blank" class="btn">View Project</a>
-                <div class="skills">
-                    <div class="skill">
-                        <p>Java</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
+                <div class="project-images">
+                    <img src="images/cylife/cylife.jpg" alt="cylife">
+                    <img src="images/cylife/code.jpg" alt="code">
+                </div>
+                <div class="project-content">
+                    <h3>CyLife</h3>
+                    <ul>
+                        <li>Developed the backend using Spring Boot, Java, and MySQL, ensuring efficient database operations and seamless data management while optimizing performance for a smooth user experience.</li>
+                        <p></p>
+                        <li>Implemented real-time chat and notification features using WebSockets, allowing users to communicate instantly within their clubs and receive timely updates about new members and events.</li>
+                        <p></p>
+                        <li>Designed and maintained a structured relational database that efficiently handles users, club memberships, organizations, and event tracking, ensuring reliable data retrieval and management.</li>
+                        <p></p>
+                        <li>Configured and optimized Maven for dependency management, streamlining the build process and improving development efficiency by ensuring smooth integration between backend and frontend components.</li>
+                        <p></p>
+                        <li>Collaborated closely with a cross-functional team to implement core functionalities, ensuring the application’s backend and frontend components worked cohesively to deliver a fully integrated and responsive experience.</li>
+                    </ul>
+                    <div class="skills-buttons">
+                        <button>Java</button>
+                        <button>MySQL</button>
+                        <button>Spring Boot</button>
+                        <button>WebSockets</button>
+                        <button>Maven</button>
+                        <button>Git</button>
+                        <a href="https://github.com/gregorychernyavskiy/CyLife-FullStack" target="_blank" class="github-icon">
+                            <img src="images/git.jpg" alt="GitHub">
+                        </a>                         
                     </div>
-                    <div class="skill">
-                        <p>JavaScript</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
+                </div>
+            </div>
+            <div class="project" data-aos="fade-up">
+                <div class="project-images">
+                    <img src="images/CCB/QR code.jpg" alt="crypto bot">
+                    <img src="images/CCB/code.jpg" alt="code">
+                </div>
+                <div class="project-content">
+                    <h3>Cherzy Crypto Bot</h3>
+                    <ul>
+                        <li>Developed a Python-based Telegram bot leveraging the CoinGecko API to provide real-time cryptocurrency prices, market trends, trading volume, and supply data, ensuring users receive up-to-date insights.</li>
+                        <p></p>
+                        <li>Implemented automated trend analysis across multiple timeframes, allowing users to track both short-term fluctuations and broader market movements for informed trading decisions.</li>
+                        <p></p>
+                        <li>Deployed the bot on AWS EC2/S3, optimizing performance, reducing downtime, and maintaining high reliability through automated error handling and service restarts.</li>
+                        <p></p>
+                        <li>Designed and automated data retrieval, processing, and delivery, ensuring low-latency updates while providing a seamless and efficient experience for active users.</li>
+                    </ul>
+                    <div class="skills-buttons">
+                        <button>Python</button>
+                        <button>AWS EC2/S3</button>
+                        <button>Telegram & CoinGecko APIs</button>
                     </div>
-                    <div class="skill">
-                        <p>MySQL</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Spring Boot</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Android Studio</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>WebSockets</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Maven</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
+                    <a href="https://github.com/gregorychernyavskiy/Cherzy-Crypto-Bot" target="_blank" class="github-icon">
+                        <img src="images/git.jpg" alt="GitHub">
+                    </a>  
                 </div>
             </div>            
-            <div class="project" data-aos="fade-up">
-                <img src="images/cherzycryptobot.jpg" alt="Cherzy Crypto Bot">
-                <h3>Cherzy Crypto Bot</h3>
-                <p>
-                    I developed a Python-based Telegram bot that utilizes the CoinGecko API to provide real-time cryptocurrency data, price tracking, and trading insights to users. The bot was designed to analyze market trends across multiple time intervals, delivering key metrics such as market capitalization, 24-hour trading volume, and circulating supply. By implementing efficient data retrieval and processing techniques, I ensured reliable performance and minimized downtime, allowing users to make informed trading decisions based on up-to-date market conditions.
-                </p>
-                <a href="https://github.com/gregorychernyavskiy/Cherzy-Crypto-Bot" target="_blank" class="btn">View Project</a>
-                <div class="skills">
-                    <div class="skill">
-                        <p>Python</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Telegram & Cryptocurrency APIs</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="project" data-aos="fade-up" data-aos-delay="200">
-                <img src="images/amr.jpg" alt="Archived Message Reconstruction">
-                <h3>Archived Message Reconstruction (AMR)</h3>
-                <p>
-                    I optimized message decoding by implementing recursive algorithms for efficient tree construction, significantly improving accuracy and processing speed. Through rigorous testing and validation, I enhanced system reliability and robustness, ensuring consistent and precise decoding across various scenarios. My approach focused on optimizing algorithmic efficiency while maintaining adaptability to different input conditions.
-                </p>
-                <a href="https://github.com/gregorychernyavskiy/Archived-Message-Reconstruction-AMR-" target="_blank" class="btn">View Project</a>
-                <div class="skills">
-                    <div class="skill">
-                        <p>Java</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Algorithm Design</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <section id="leadership" class="section">
-            <h2 data-aos="fade-up">Leadership</h2>
-            <div class="experience-entry" data-aos="fade-up" data-aos-delay="400">
-                <h3>Computer Science & Software Engineering Club (CSE) – Project Lead </h3>
-                <p><strong>Jan 2024 – Dec 2024</strong></p>
-                <p>
-                    As Project Lead of the CSE Club, I led diverse coding projects by fostering collaboration, guiding members through complex problem-solving, 
-                    and organizing technical workshops to improve coding practices, teamwork, and expertise in emerging technologies.</p>
-            </div>
-            <div class="experience-entry" data-aos="fade-up">
-                <h3>PrISUm Solar Car – Optimization Lead</h3>
-                <p><strong>Aug 2022 – Sep 2023</strong></p>
-                <p> 
-                    Led the optimization efforts for the PrISUm Solar Car, enhancing vehicle performance by 35% through the development of an onboard diagnostic 
-                    system for real-time data collection and analysis. This system improved the accuracy of performance monitoring and system optimization, 
-                    ensuring smooth project execution.</p>
-            </div>        
     </section>
 
+
+    <section id="leadership" class="section">
+        <h2 data-aos="fade-up">Leadership</h2>
+        <hr style="border: 1px solid #F08080; width: 80%; margin: 10px auto;">
+    
+        <div class="experience-entry" data-aos="fade-up">
+            <div class="experience-details">
+                <p><strong>Project Lead</strong> - Computer Science & Software Engineering Club (CSE) @ Iowa State University</p>
+            </div>
+            <div>
+                <p>01/2024 – 12/2024</p>
+            </div>
+        </div>
+    
+        <div class="experience-entry" data-aos="fade-up">
+            <div class="experience-details">
+                <p><strong>Treasurer</strong> - Chess Club @ Iowa State University</p>
+            </div>
+            <div>
+                <p>01/2024 – 05/2024</p>
+            </div>
+        </div>
+    
+        <div class="experience-entry" data-aos="fade-up">
+            <div class="experience-details">
+                <p><strong>Optimization Lead</strong> - PrISUm Solar Car @ Iowa State University</p>
+            </div>
+            <div>
+                <p>08/2022 – 09/2023</p>
+            </div>
+        </div>
+    </section>    
+
+
     <footer>
-        <p>&copy; 2024 Gregory Chernyavskiy. All rights reserved.</p>
+        <p>&copy; 2025 Gregory Chernyavskiy. All rights reserved.</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Initialize particles.js
         particlesJS('particles-js', {
             particles: {
-                number: {
-                    value: 100
-                },
-                size: {
-                    value: 3
-                },
-                move: {
-                    speed: 1
-                },
-                line_linked: {
-                    enable: true
-                }
+                number: { value: 100 },
+                size: { value: 3 },
+                move: { speed: 1 },
+                line_linked: { enable: true }
             }
         });
-
-        // Initialize AOS (Animate On Scroll)
         AOS.init();
     </script>
 </body>
