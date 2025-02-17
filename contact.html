@@ -14,6 +14,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="experience.html">Experience</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -47,52 +48,22 @@
                 </div>
             </div>
         </div>
-        <div class="social-links" data-aos="fade-up" data-aos-delay="400">
-            <a href="https://www.linkedin.com/in/gregory-chernyavskiy/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/gregorychernyavskiy" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/gregorychernyavskiy" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
     </section>
     
     <footer>
         <p>&copy; 2025 Gregory Chernyavskiy. All rights reserved.</p>
     </footer>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Initialize particles.js
         particlesJS('particles-js', {
             particles: {
-                number: {
-                    value: 100
-                },
-                size: {
-                    value: 3
-                },
-                move: {
-                    speed: 1
-                },
-                line_linked: {
-                    enable: true
-                }
+                number: { value: 100 },
+                size: { value: 3 },
+                move: { speed: 1 },
+                line_linked: { enable: true }
             }
         });
-
-        // Initialize Google Map
-        function initMap() {
-            var location = { lat: 41.8781, lng: -87.6298 }; // Example coordinates
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: location
-            });
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map
-            });
-        }
-
-        // Initialize AOS (Animate On Scroll)
         AOS.init();
     </script>
 </body>
