@@ -432,6 +432,7 @@ form button:hover {
 .experience-map {
     width: 250px;
     height: 250px;
+    align-items: center;
 }
 
 .experience-map iframe {
