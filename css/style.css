@@ -705,10 +705,12 @@ form button:hover {
 
 
 
+
+
 .lore-entryyy {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     background-color: #2C2C2C;
     padding: 20px;
     border-radius: 10px;
@@ -718,19 +720,21 @@ form button:hover {
     gap: 20px;
 }
 
-.lore-images {
+.lore-imagess {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: flex-start;
 }
 
-.lore-image {
-    max-width: 100%;
+.lore-imagee {
+    width: 100%;
+    max-width: 900px;
     border-radius: 5px;
 }
 
 .lore-textt {
-    width: 60%;
+    flex: 1;
     text-align: left;
     color: white;
 }
