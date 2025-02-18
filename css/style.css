@@ -664,3 +664,77 @@ form button:hover {
     justify-content: center;
     gap: 20px;
 }
+
+
+
+
+.lore-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.lore-entry {
+    display: flex;
+    flex-direction: row; /* Ensures images are on the right */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Adjust spacing between text and images */
+    max-width: 900px; /* Adjust width to fit content */
+}
+
+.lore-text {
+    flex: 1; /* Allows text to take up available space */
+    text-align: left; /* Align text to the left */
+}
+
+.lore-images {
+    display: flex;
+    flex-direction: column; /* Stacks images vertically */
+    align-items: flex-end; /* Align images to the right */
+    gap: 20px;
+}
+
+.lore-images img {
+    width: 400px; /* Adjust as needed */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+.lore-entryyy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2C2C2C;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.lore-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lore-image {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.lore-textt {
+    width: 60%;
+    text-align: left;
+    color: white;
+}
+
+.lore-textt h3 {
+    color: #F08080;
+}
