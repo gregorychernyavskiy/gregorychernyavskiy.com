@@ -710,7 +710,7 @@ form button:hover {
 .lore-entryyy {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     background-color: #2C2C2C;
     padding: 20px;
     border-radius: 10px;
