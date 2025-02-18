@@ -6,6 +6,23 @@
     <title>Contact - Gregory Chernyavskiy</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        .contact-buttons .btn {
+            background-color: #F08080; /* Same pink as Send button */
+            color: #1A1A1A; /* Dark text for contrast */
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px;
+        }
+        .contact-buttons .btn:hover {
+            background-color: #E57373; /* Darker pink for hover effect */
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -13,20 +30,28 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="experience.html">Experience</a></li>
                 <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="resume.html">Resume</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
     
-    
-
-    
+    <section id="contact-info" class="section">
+        <div class="contact-box background-box" data-aos="fade-up">
+            <h2>Contact Me</h2>
+            <p><strong>Email:</strong> gregory@example.com</p>
+            <p><strong>Phone:</strong> (123) 456-7890</p>
+            <div class="contact-buttons">
+                <a href="https://linkedin.com/in/gregory" target="_blank" class="btn">LinkedIn</a>
+                <a href="https://github.com/gregory" target="_blank" class="btn">GitHub</a>
+            </div>
+        </div>
+    </section>
     
     <section id="contact-form" class="section">
         <div class="contact-container">
-            <h2></h2>
             <form action="https://formspree.io/f/meojqqod" method="post" data-aos="fade-up">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
