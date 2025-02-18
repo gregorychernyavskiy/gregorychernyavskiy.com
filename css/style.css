@@ -548,10 +548,12 @@ form button:hover {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    pointer-events: none;
+    cursor: default;
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
+
 
 .github-icon {
     position: absolute;
@@ -603,4 +605,36 @@ form button:hover {
     text-align: center;
     max-width: 600px;
     margin: 20px auto;
+}
+
+
+.contact-box h2 {
+    color: #F08080; /* Pink for Contact Me */
+}
+.contact-box p strong {
+    color: #F08080; /* Pink for Email and Phone */
+}
+.contact-buttons .btn {
+    background-color: #F08080; /* Same pink as Send button */
+    color: #1A1A1A; /* Dark text for contrast */
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 10px;
+    width: 40px; /* Match the Send button size */
+    text-align: center;
+}
+.contact-buttons .btn:hover {
+    background-color: #E57373; /* Darker pink for hover effect */
+    transform: scale(1.05);
+}
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
