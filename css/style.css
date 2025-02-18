@@ -378,16 +378,7 @@ form button:hover {
 
 /* Moved inline styles from HTML files */
 
-.lore-entry {
-    display: flex;
-    align-items: center;
-    background-color: #2C2C2C;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    margin: 20px auto;
-}
+
 
 .lore-image {
     width: 40%;
@@ -677,11 +668,16 @@ form button:hover {
 
 .lore-entry {
     display: flex;
-    flex-direction: row; /* Ensures images are on the right */
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 20px; /* Adjust spacing between text and images */
-    max-width: 900px; /* Adjust width to fit content */
+    background-color: #2C2C2C;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;
+    gap: 20px;
 }
 
 .lore-text {
@@ -711,6 +707,7 @@ form button:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     background-color: #2C2C2C;
     padding: 20px;
     border-radius: 10px;
