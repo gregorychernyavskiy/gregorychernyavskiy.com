@@ -41,3 +41,4 @@ This repository contains the source code and assets for my personal portfolio we
 3. **Optional**:
    - Customize `style.css` to tweak the design.
    - Replace images in the `images/` folder to update the content.
+
