@@ -3,61 +3,584 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gregory Chernyavskiy Portfolio</title>
+    <title>Gregory Chernyavskiy - Full Stack Developer</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/barba.js@1.0.0/dist/barba.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <div id="particles-js"></div>
+    <!-- SVG Filters for Distortion Effects -->
+    <div class="svg-filters">
+        <svg width="0" height="0">
+            <defs>
+                <filter id="distortion">
+                    <feTurbulence type="turbulence" baseFrequency="0.01 0.01" numOctaves="2" seed="2">
+                        <animate attributeName="baseFrequency" dur="30s" values="0.01 0.01;0.02 0.02;0.01 0.01" repeatCount="indefinite"/>
+                    </feTurbulence>
+                    <feDisplacementMap in="SourceGraphic" scale="10"/>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+    
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Background Canvas for Effects -->
+    <canvas id="backgroundCanvas"></canvas>
+    
+    <!-- Navigation -->
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="autobiography.html">Autobiography</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home" class="magnetic-element">Home</a></li>
+                <li><a href="#experience" class="magnetic-element">Experience</a></li>
+                <li><a href="#projects" class="magnetic-element">Projects</a></li>
+                <li><a href="#contact" class="magnetic-element">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    <section id="home" class="section parallax">
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section" data-scroll-section>
         <div class="intro intro-entry" data-aos="fade-up">
-            <h2 class="name pop-up">Hi, I'm Gregory Chernyavskiy</h2>
-            <p class="description pop-up">
-                <ul>
-                    <li>A third-year Computer Science student with a minor in Applied AI at Iowa State University. Passionate for full-stack development, cloud computing, and deep learning. Experience includes developing AI-driven analysis tools at the SwAPP Lab and optimizing DevOps workflows during an internship at the DePaul DICE Lab.</li>
-                    <p></p>
-                    <li>Built CyLife, a real-time full-stack application with chat and notifications. Created convertfile.me, a web-based file conversion tool. Developed Cherzy Crypto Bot, an automated cryptocurrency tracking bot with real-time analytics.</li>                
-                    
-                </ul>
+            <h2 class="name pop-up" data-splitting>Hi, I'm Gregory Chernyavskiy</h2>
+            <p class="description pop-up" data-splitting>
+                A third-year Computer Science student with a minor in Applied AI at Iowa State University. 
+                Passionate for full-stack development, cloud computing, and deep learning.
             </p>
-            <img src="images/photos/pfp.jpg" alt="Gregory Chernyavskiy" class="profile-picture">
+            <img src="images/photos/pfp.jpg" alt="Gregory Chernyavskiy" class="profile-picture large-avatar magnetic-element">
             <div class="buttons" data-aos="fade-up" data-aos-delay="200">
-                <a href="resume/Gregory_Chernyavskiy_Resume.pdf" class="btn" download="Gregory_Chernyavskiy_Resume.pdf">Download CV</a>
+                <a href="resume/Gregory_Chernyavskiy_Resume.pdf" class="btn magnetic-element" download="Gregory_Chernyavskiy_Resume.pdf">Download CV</a>
+                <a href="#contact" class="btn magnetic-element">Get In Touch</a>
             </div>            
             <div class="social-links" data-aos="fade-up" data-aos-delay="400">
-                <a href="https://www.linkedin.com/in/gregory-chernyavskiy/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/gregorychernyavskiy" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gregory-chernyavskiy/" target="_blank" class="magnetic-element"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/gregorychernyavskiy" target="_blank" class="magnetic-element"><i class="fab fa-github"></i></a>
             </div>
         </div>        
     </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section" data-scroll-section>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-splitting>Experience</h2>
+            
+            <div class="experience-grid">
+                <div class="experience-card" data-aos="fade-up" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Software Engineer Intern</h3>
+                            <span class="company">Marshalltown Company</span>
+                            <span class="duration">May 2025 - Current</span>
+                        </div>
+                        <p>
+                            Built an end-to-end packaging system that combines a custom 3D packing algorithm with a Blazor-based web application, allowing users to visually track how pallets are packed in real time. Processed inventory data for 17,400+ tools using C# and LINQPad, transforming raw CSV exports into a structured SQL Server database with accurate case dimensions, weights, and classifications. Developed interactive UI components using Blazor and MudBlazor, connecting dynamic database content to front-end views through dependency injection and asynchronous event handling.
+                        </p>
+                    </div>
+                    <div class="experience-image">
+                        <!-- git.jpg deleted, so no image here -->
+                    </div>
+                </div>
+                <div class="experience-card" data-aos="fade-up" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Software Engineering Intern</h3>
+                            <span class="company">DePaul DICE Lab</span>
+                            <span class="duration">May 2024 - August 2024</span>
+                        </div>
+                        <p>
+                            Designed and launched a Docker container interface on Ubuntu VM, integrating Content-Defined Merkle Trees (CDMT) with Python and Git to reduce redundancy by 35%. Built a data processing pipeline in collaboration with a Master's student and the supervising CS professor, using Python, NumPy, and Git to clean and transform container workflow logs for enhanced log analytics and anomaly detection. Automated workflows to improve deployment and resource management efficiency, and developed a deeper appreciation for systems engineering beyond just writing code.
+                        </p>
+                    </div>
+                    <div class="experience-image">
+                        <img src="images/logos/DICE.png" alt="DePaul DICE Lab" class="distortion-hover">
+                        <img src="images/CyLife/code.jpg" alt="DICE Lab Code" class="distortion-hover">
+                    </div>
+                </div>
+                <div class="experience-card" data-aos="fade-up" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Research Assistant</h3>
+                            <span class="company">SwAPP Lab, Iowa State University</span>
+                            <span class="duration">January 2024 - Present</span>
+                        </div>
+                        <p>
+                            Built custom tools using the Tree-sitter parsing library, NumPy, and Python APIs to generate auto-labeled datasets for model analysis, streamlining the labeling process by 60%. Partnered with a Master's student and two fellow undergraduates to design and optimize a SciPy data-processing pipeline for over 100,000 data points—cutting runtime by 40% and improving clustering accuracy. Realized a preference for building systems over analyzing models, solidifying a focus on software development and system optimization.
+                        </p>
+                    </div>
+                    <div class="experience-image">
+                        <img src="images/logos/SwAPP.png" alt="SwAPP Lab" class="distortion-hover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section" data-scroll-section>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-splitting>Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="project-content">
+                        <h3>CyLife</h3>
+                        <p>A full-stack Android application designed for student organizations. Built backend with Spring Boot and MySQL, integrated WebSockets for real-time chat, and optimized performance for smooth user experience.</p>
+                        <div class="project-tech">
+                            <span>Spring Boot</span>
+                            <span>MySQL</span>
+                            <span>WebSockets</span>
+                            <span>Android</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn magnetic-element">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/CyLife/cylife.jpg" alt="CyLife" class="distortion-hover">
+                        <img src="images/CyLife/code.jpg" alt="CyLife Code" class="distortion-hover">
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="project-content">
+                        <h3>convertfile.me</h3>
+                        <p>A web-based file conversion tool with drag-and-drop interface. Built complete full-stack solution using Node.js and Express, handling image and PDF conversions efficiently.</p>
+                        <div class="project-tech">
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>JavaScript</span>
+                            <span>File Processing</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://convertfile.me" target="_blank" class="btn magnetic-element">Visit Site</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/convertfile/convertfile.jpg" alt="ConvertFile" class="distortion-hover">
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="project-content">
+                        <h3>Cherzy Crypto Bot</h3>
+                        <p>A Python-based Telegram bot delivering real-time cryptocurrency updates. Integrated with live APIs and served real users, reinforcing passion for building practical software.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Telegram API</span>
+                            <span>Cryptocurrency APIs</span>
+                            <span>Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn magnetic-element">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/CCB/cherzycryptobot.jpg" alt="Crypto Bot" class="distortion-hover">
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="project-content">
+                        <h3>Dungeon Monsters</h3>
+                        <p>Engineered a high-performance C/C++ roguelike with procedurally generated multi-level maps, dynamic room/corridor placement, and a Ncurses-based UI to deliver a terminal-style gameplay experience. Implemented a modular AI engine and event-driven priority queue for unpredictable monster encounters.</p>
+                        <div class="project-tech">
+                            <span>C</span>
+                            <span>C++</span>
+                            <span>ncurses</span>
+                            <span>Git</span>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/Dungeon/dungeon.png" alt="Dungeon Monsters" class="distortion-hover">
+                        <img src="images/Dungeon/dungeon2.png" alt="Dungeon Monsters 2" class="distortion-hover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" data-scroll-section>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-splitting>Get In Touch</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-up">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>gregory.chernyavskiy@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Chicago, IL</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Iowa State University</span>
+                    </div>
+                    <div class="contact-buttons">
+                        <a href="https://www.linkedin.com/in/gregory-chernyavskiy/" target="_blank" class="btn magnetic-element">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/gregorychernyavskiy" target="_blank" class="btn magnetic-element">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form" data-aos="fade-up">
+                    <h3>Send me a Message</h3>
+                    <form action="https://formspree.io/f/meojqqod" method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn magnetic-element">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="testimonials-section" data-aos="fade-up">
+                <h3>What People Say</h3>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                        <p>"Gregory's passion for technology and innovation is truly inspiring. He is a great friend and an exceptional talent."</p>
+                        <div class="testimonial-author">
+                            <strong>Cole Digirolamo</strong>
+                            <span>Georgia Institute of Technology</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                        <p>"It's been a privilege to see Gregory grow into the talented engineer he is today. His work is impeccable, and his drive is unmatched."</p>
+                        <div class="testimonial-author">
+                            <strong>Alex Gregoriev</strong>
+                            <span>University of Illinois Urbana-Champaign</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                        <p>"Gregory is an amazing brother and a brilliant future software engineer. I am proud to have a brother like him."</p>
+                        <div class="testimonial-author">
+                            <strong>Martin Chernyavskiy</strong>
+                            <span>University of Wisconsin-Madison</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2025 Gregory Chernyavskiy. All rights reserved.</p>
     </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 100 },
-                size: { value: 3 },
-                move: { speed: 1 },
-                line_linked: { enable: true }
-            }
+        // Initialize all libraries
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true
         });
-        AOS.init();
+
+        // Initialize Splitting.js for text animations
+        Splitting();
+
+        // Initialize Vanilla Tilt for 3D card effects
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3,
+        });
+
+        // GSAP ScrollTrigger Setup
+        gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+        });
+
+        // GSAP ScrollTrigger Animations
+        gsap.utils.toArray('[data-scroll-section]').forEach(section => {
+            // Fade in sections
+            gsap.fromTo(section, 
+                { opacity: 0, y: 100 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+
+            // Parallax effect for images
+            const images = section.querySelectorAll('img');
+            images.forEach(img => {
+                gsap.to(img, {
+                    yPercent: -20,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: img,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+            });
+        });
+
+        // Text Animations with GSAP
+        gsap.utils.toArray('[data-splitting]').forEach(element => {
+            const chars = element.querySelectorAll('.char');
+            
+            gsap.fromTo(chars,
+                { opacity: 0, y: 50, rotationX: -90 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    rotationX: 0,
+                    duration: 0.8,
+                    stagger: 0.02,
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // Typewriter Effect for Hero Title
+        const heroTitle = document.querySelector('.name');
+        if (heroTitle) {
+            const text = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            gsap.to(heroTitle, {
+                duration: 0,
+                onComplete: () => {
+                    let i = 0;
+                    const typeInterval = setInterval(() => {
+                        heroTitle.textContent += text[i];
+                        i++;
+                        if (i >= text.length) {
+                            clearInterval(typeInterval);
+                        }
+                    }, 100);
+                }
+            });
+        }
+
+        // Enhanced Particle System with Three.js
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0);
+        
+        const canvas = document.getElementById('backgroundCanvas');
+        if (canvas) {
+            canvas.parentNode.insertBefore(renderer.domElement, canvas);
+            renderer.domElement.style.position = 'fixed';
+            renderer.domElement.style.top = '0';
+            renderer.domElement.style.left = '0';
+            renderer.domElement.style.zIndex = '-1';
+            renderer.domElement.style.opacity = '0.3';
+        }
+
+        // Create particles
+        const particles = [];
+        const particleCount = 100;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const geometry = new THREE.SphereGeometry(0.1, 8, 8);
+            const material = new THREE.MeshBasicMaterial({ 
+                color: 0x3b82f6,
+                transparent: true,
+                opacity: Math.random() * 0.5 + 0.1
+            });
+            const particle = new THREE.Mesh(geometry, material);
+            
+            particle.position.x = (Math.random() - 0.5) * 20;
+            particle.position.y = (Math.random() - 0.5) * 20;
+            particle.position.z = (Math.random() - 0.5) * 20;
+            
+            particle.velocity = new THREE.Vector3(
+                (Math.random() - 0.5) * 0.01,
+                (Math.random() - 0.5) * 0.01,
+                (Math.random() - 0.5) * 0.01
+            );
+            
+            scene.add(particle);
+            particles.push(particle);
+        }
+
+        camera.position.z = 5;
+
+        // Animation loop
+        function animateParticles() {
+            requestAnimationFrame(animateParticles);
+            
+            particles.forEach(particle => {
+                particle.position.add(particle.velocity);
+                
+                // Bounce off boundaries
+                if (Math.abs(particle.position.x) > 10) particle.velocity.x *= -1;
+                if (Math.abs(particle.position.y) > 10) particle.velocity.y *= -1;
+                if (Math.abs(particle.position.z) > 10) particle.velocity.z *= -1;
+                
+                // Rotate particles
+                particle.rotation.x += 0.01;
+                particle.rotation.y += 0.01;
+            });
+            
+            renderer.render(scene, camera);
+        }
+        animateParticles();
+
+        // Mouse interaction with particles
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            const mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+            
+            particles.forEach(particle => {
+                const distance = Math.sqrt(
+                    Math.pow(particle.position.x - mouseX * 10, 2) +
+                    Math.pow(particle.position.y - mouseY * 10, 2)
+                );
+                
+                if (distance < 3) {
+                    const force = (3 - distance) / 3;
+                    particle.velocity.x += (mouseX - particle.position.x / 10) * force * 0.001;
+                    particle.velocity.y += (mouseY - particle.position.y / 10) * force * 0.001;
+                }
+            });
+        });
+
+        // Distortion Hover Effects
+        document.querySelectorAll('.distortion-hover').forEach(img => {
+            img.addEventListener('mouseenter', function() {
+                this.style.filter = 'url(#distortion)';
+                this.style.transform = 'scale(1.05) rotate(1deg)';
+            });
+            
+            img.addEventListener('mouseleave', function() {
+                this.style.filter = 'none';
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Micro-interactions for form inputs
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                gsap.to(this, {
+                    scale: 1.02,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            
+            input.addEventListener('blur', function() {
+                gsap.to(this, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // Enhanced card hover effects
+        document.querySelectorAll('.experience-card, .project-card, .testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                gsap.to(this, {
+                    y: -10,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // Window resize handlers
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Barba.js for smooth page transitions (if needed for future pages)
+        barba.init({
+            transitions: [{
+                name: 'default-transition',
+                leave: (data) => {
+                    return gsap.to(data.current.container, {
+                        opacity: 0,
+                        duration: 0.5
+                    });
+                },
+                enter: (data) => {
+                    return gsap.fromTo(data.next.container, 
+                        { opacity: 0 },
+                        { opacity: 1, duration: 0.5 }
+                    );
+                }
+            }]
+        });
     </script>
 </body>
 </html>
