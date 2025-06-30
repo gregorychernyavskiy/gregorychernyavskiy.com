@@ -85,18 +85,16 @@ nav a:hover {
 nav a::after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 0;
     height: 2px;
     bottom: -5px;
     left: 0;
     background: #007bff;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    transition: width 0.3s ease;
 }
 
 nav a:hover::after {
-    transform: scaleX(1);
+    width: 100%;
 }
 
 nav a::before {
@@ -349,7 +347,9 @@ nav a:hover::before {
     height: 220px;
     border-radius: 10px;
     overflow: hidden;
-    background: rgba(0, 123, 255, 0.1);
+    background: transparent;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .experience-image img {
@@ -447,7 +447,9 @@ nav a:hover::before {
     height: 220px;
     border-radius: 10px;
     overflow: hidden;
-    background: rgba(0, 123, 255, 0.1);
+    background: transparent;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .project-image img {
@@ -935,4 +937,15 @@ textarea:focus {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* Remove hover border and shadow for project and experience images */
+.project-card:hover .project-image,
+.project-image:hover,
+.project-image:focus-within,
+.experience-card:hover .experience-image,
+.experience-image:hover,
+.experience-image:focus-within {
+    border: none !important;
+    box-shadow: none !important;
 }
