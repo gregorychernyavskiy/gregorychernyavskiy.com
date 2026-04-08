@@ -49,7 +49,7 @@ export default function InfoPanel() {
                         <hr className="text-[#8A794B]"/>
                         <p>
                             <ul>
-                                <li>M.S. in AI @ <a href="https://www.gatech.edu" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">Georgia Institute of Technology</a></li>
+                                <li>Incoming M.S. in AI @ <a href="https://www.gatech.edu" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">Georgia Institute of Technology</a></li>
                                 <li>Computer Science @ <a href="https://www.iastate.edu" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">Iowa State University</a></li>
                             </ul>
                         </p>
