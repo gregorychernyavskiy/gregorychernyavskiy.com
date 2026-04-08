@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cherzy-bg: oklch(97% 0.001 106);
+  --color-cherzy-text: #111111;
+
+  --font-sans: "Baskerville", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--color-cherzy-bg);
+  color: var(--color-cherzy-text);
+  font-family: var(--font-sans);
+}
