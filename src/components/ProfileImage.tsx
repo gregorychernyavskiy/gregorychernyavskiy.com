@@ -5,7 +5,7 @@ export default function ProfileImage() {
         <img
             src={profilePic}
             alt="Gregory Chernyavskiy"
-            className="w-[500px] h-[500px] object-cover object-top flex-shrink-0"
+            className="w-full md:w-[500px] h-[300px] md:h-[500px] object-cover object-top flex-shrink-0"
         />
     );
 }

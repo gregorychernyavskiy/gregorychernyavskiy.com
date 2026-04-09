@@ -19,7 +19,7 @@ export default function InfoPanel() {
     }
 
     return (
-        <div className="w-[420px] h-[500px] flex flex-col flex-shrink-0">
+        <div className="w-full md:w-[420px] h-auto md:h-[500px] flex flex-col flex-shrink-0">
             <div className="flex items-center mb-4">
                 <div className="flex gap-6">
                     {(["about me", "experience", "projects"] as Tab[]).map((tab) => (
