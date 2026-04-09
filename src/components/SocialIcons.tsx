@@ -1,4 +1,14 @@
+import { useState } from "react";
+
 export default function SocialIcons() {
+    const [copied, setCopied] = useState(false);
+
+    function copyEmail() {
+        navigator.clipboard.writeText("gregorychernyavskiy@gmail.com");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    }
+
     return (
         <div className="flex gap-4 items-center">
             <a href="https://leetcode.com/u/cherzy11/" target="_blank" rel="noopener noreferrer" className="text-current hover:text-[#8A794B] transition-colors">
@@ -21,6 +31,17 @@ export default function SocialIcons() {
                     <path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-40-88H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm0,32H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Z"/>
                 </svg>
             </a>
+            <button onClick={copyEmail} className="text-current hover:text-[#8A794B] transition-colors relative" title={copied ? "Copied!" : "Copy email"}>
+                {copied ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/>
+                    </svg>
+                ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-8,144H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Zm-82.59-92.1L48,76H208Z"/>
+                    </svg>
+                )}
+            </button>
         </div>
     );
 }

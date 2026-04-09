@@ -5,6 +5,18 @@ type Tab = "about me" | "experience" | "projects";
 
 export default function InfoPanel() {
     const [activeTab, setActiveTab] = useState<Tab>("about me");
+    const [displayTab, setDisplayTab] = useState<Tab>("about me");
+    const [fading, setFading] = useState(false);
+
+    function switchTab(tab: Tab) {
+        if (tab === activeTab) return;
+        setFading(true);
+        setTimeout(() => {
+            setDisplayTab(tab);
+            setActiveTab(tab);
+            setFading(false);
+        }, 150);
+    }
 
     return (
         <div className="w-[420px] h-[500px] flex flex-col flex-shrink-0">
@@ -13,7 +25,7 @@ export default function InfoPanel() {
                     {(["about me", "experience", "projects"] as Tab[]).map((tab) => (
                         <button
                             key={tab}
-                            onClick={() => setActiveTab(tab)}
+                            onClick={() => switchTab(tab)}
                             className={`text-sm capitalize pb-1 transition-colors ${
                                 activeTab === tab
                                     ? "border-b-2 border-current font-medium hover:text-[#8A794B]"
@@ -26,8 +38,8 @@ export default function InfoPanel() {
                 </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto">
-                {activeTab === "about me" && (
+            <div className={`flex-1 overflow-y-auto transition-opacity duration-150 ${fading ? "opacity-0" : "opacity-100"}`}>
+                {displayTab === "about me" && (
                     <div className="flex flex-col gap-4">
                         <p></p>
                         <p className="text-xl">
@@ -55,7 +67,7 @@ export default function InfoPanel() {
                         </p>
                     </div>
                 )}
-                {activeTab === "experience" && (
+                {displayTab === "experience" && (
                     <div className="flex flex-col gap-4">
                         <p></p>
                         <div>
@@ -99,7 +111,7 @@ export default function InfoPanel() {
                         </div>
                     </div>
                 )}
-                {activeTab === "projects" && (
+                {displayTab === "projects" && (
                     <div className="flex flex-col gap-4">
                         <p></p>
                         <div>
