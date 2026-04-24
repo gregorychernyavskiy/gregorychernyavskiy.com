@@ -19,17 +19,17 @@ export default function InfoPanel() {
     }
 
     return (
-        <div className="w-full md:w-[420px] h-auto md:h-[500px] flex flex-col flex-shrink-0">
-            <div className="flex items-center mb-4">
-                <div className="flex gap-6">
+        <section className="flex h-full w-full max-w-[42rem] flex-col">
+            <div className="mb-5 flex items-center border-b border-black/10 pb-3">
+                <div className="flex flex-wrap gap-5">
                     {(["about me", "experience", "projects"] as Tab[]).map((tab) => (
                         <button
                             key={tab}
                             onClick={() => switchTab(tab)}
-                            className={`text-sm capitalize pb-1 transition-colors ${
+                            className={`border-b-2 pb-1 text-sm capitalize transition-colors ${
                                 activeTab === tab
-                                    ? "border-b-2 border-current font-medium hover:text-[#8A794B]"
-                                    : "text-gray-400 hover:text-[#8A794B]"
+                                    ? "border-current font-medium text-black hover:text-[#8A794B]"
+                                    : "border-transparent text-gray-400 hover:text-[#8A794B]"
                             }`}
                         >
                             {tab}
@@ -38,10 +38,11 @@ export default function InfoPanel() {
                 </div>
             </div>
 
-            <div className={`flex-1 overflow-y-auto transition-opacity duration-150 ${fading ? "opacity-0" : "opacity-100"}`}>
+            <div
+                className={`min-h-[320px] flex-1 overflow-y-auto pr-1 text-[1.02rem] leading-8 transition-opacity duration-150 lg:min-h-[520px] ${fading ? "opacity-0" : "opacity-100"}`}
+            >
                 {displayTab === "about me" && (
                     <div className="flex flex-col gap-4">
-                        <p></p>
                         <p className="text-xl">
                             Hi! I'm <span style={{color: "#8A794B"}}>Gregory Chernyavskiy</span>.
                         </p>
@@ -51,25 +52,24 @@ export default function InfoPanel() {
                                 Based in <span style={{color: "#8A794B"}}>Ames, IA</span>.
                         </p>
                         <hr className="text-[#8A794B]"/>
-                        <p>
-                            <ul>
+                        <div>
+                            <ul className="space-y-2">
                                 <li>Incoming SWE @ <a href="https://www.ibm.com" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">IBM</a></li>
                                 <li>Incoming SWE Intern @ <a href="https://www.buildertrend.com" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">Buildertrend</a></li>
                                 <li>Prev SWE Intern @ <a href="https://www.marshalltown.com" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">Marshalltown</a></li>
                             </ul>
-                        </p>
+                        </div>
                         <hr className="text-[#8A794B]"/>
-                        <p>
-                            <ul>
+                        <div>
+                            <ul className="space-y-2">
                                 <li>Incoming M.S. in AI @ <a href="https://www.gatech.edu" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">Georgia Institute of Technology</a></li>
                                 <li>Computer Science @ <a href="https://www.iastate.edu" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">Iowa State University</a></li>
                             </ul>
-                        </p>
+                        </div>
                     </div>
                 )}
                 {displayTab === "experience" && (
                     <div className="flex flex-col gap-4">
-                        <p></p>
                         <div>
                             <div className="flex justify-between items-baseline">
                                 <span className="text-lg">Incoming SWE @ <a href="https://www.ibm.com" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">IBM</a></span>
@@ -113,7 +113,6 @@ export default function InfoPanel() {
                 )}
                 {displayTab === "projects" && (
                     <div className="flex flex-col gap-4">
-                        <p></p>
                         <div>
                             <div className="flex justify-between items-baseline">
                                 <span className="text-lg font-medium"><a href="https://perpendo.ai" target="_blank" rel="noreferrer" className="underline text-[#8A794B]">perpendo.ai</a> <span className="font-normal text-base">(AI Startup)</span></span>
@@ -140,9 +139,9 @@ export default function InfoPanel() {
                     </div>
                 )}
             </div>
-            <div className="flex justify-end pt-3">
+            <div className="flex justify-end pt-5">
                 <SocialIcons />
             </div>
-        </div>
+        </section>
     );
 }
